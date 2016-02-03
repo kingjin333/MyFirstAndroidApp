@@ -21,6 +21,7 @@
         android:layout_height="wrap_content"
         android:background="#4db6ac"
         android:layout_alignParentRight="true"
+        android:layout_alignParentend="true"
         android:layout_centerVertical="true"
         android:text="Hello"
         android:textColor="#546e7a"
