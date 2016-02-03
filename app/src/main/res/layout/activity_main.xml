@@ -8,33 +8,130 @@
 
     <TextView
         android:id="@+id/text_view_1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#43a047"
+        android:layout_centerHorizontal="true"
+        android:background="#42137b"
+        android:text="수원스마트"
+        android:textColor="#546e7a"
+        android:textSize="32sp" />
+
+
+    <TextView
+        android:id="@+id/text_view_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="#4db6ac"
         android:text="Hello"
         android:textColor="#546e7a"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/text_view_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="#b71c1c"
+        android:text="Android"
+        android:textColor="#546e7a"
+        android:textSize="32sp" />
+
+    <ImageView
+        android:id="@+id/yui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_1"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/yui" />
+
+    <TextView
+        android:id="@+id/yui_love"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/yui"
+        android:background="#09090a"
+        android:text="유이사랑"
+        android:textColor="#f7f8f9"
         android:textSize="32sp" />
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#4db6ac"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:text="Hello"
-        android:textColor="#546e7a"
+        android:layout_alignTop="@id/yui_love"
+        android:layout_toLeftOf="@id/yui_love"
+        android:text="애프터"
+        android:background="#f7f3f3"
+        android:textColor="#060606"
+        android:textSize="32sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/yui_love"
+        android:layout_toRightOf="@id/yui_love"
+        android:text="School"
+        android:background="#f7f3f3"
+        android:textColor="#060606"
         android:textSize="32sp" />
 
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#b71c1c"
-        android:layout_above="@id/text_view_1"
-        android:text="Hello"
-        android:textColor="#546e7a"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/text_view_3"
+        android:text="오른쪽"
+        android:textColor="#0b0a0a"
+        android:textSize="32sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/text_view_1"
+        android:text="오른쪽"
+        android:textColor="#0b0a0a"
+        android:textSize="32sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/text_view_1"
+        android:text="왼쪽"
+        android:textColor="#0b0a0a"
+        android:textSize="32sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/text_view_2"
+        android:text="왼쪽"
+        android:textColor="#0b0a0a"
+        android:textSize="32sp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/text_view_3"
+        android:text="위쪽"
+        android:textColor="#0b0a0a"
+        android:textSize="32sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/text_view_2"
+        android:layout_alignParentRight="true"
+        android:text="위쪽"
+        android:textColor="#0b0a0a"
         android:textSize="32sp" />
 
 
