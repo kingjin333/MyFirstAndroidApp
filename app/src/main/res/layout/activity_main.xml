@@ -8,9 +8,8 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#4db6ac"
+        android:layout_height="wrap_content"
+        android:background="#43a047"
         android:text="동해물과 백두산이"
         android:textColor="#546e7a"
         android:textSize="45sp" />
@@ -28,9 +27,8 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#4db6ac"
+        android:layout_height="wrap_content"
+        android:background="#b71c1c"
         android:text="동해물과 백두산이"
         android:textColor="#546e7a"
         android:textSize="45sp" />
