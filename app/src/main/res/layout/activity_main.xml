@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/text_view_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#43a047"
@@ -21,7 +22,6 @@
         android:layout_height="wrap_content"
         android:background="#4db6ac"
         android:layout_alignParentRight="true"
-        android:layout_alignParentend="true"
         android:layout_centerVertical="true"
         android:text="Hello"
         android:textColor="#546e7a"
@@ -32,6 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#b71c1c"
+        android:layout_above="@id/text_view_1"
         android:text="Hello"
         android:textColor="#546e7a"
         android:textSize="32sp" />
