@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/yui" />
 
     <TextView
         android:id="@+id/text_view_1"
+        android:layout_gravity="bottom"
+        android:gravity="right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -17,122 +23,4 @@
         android:textSize="32sp" />
 
 
-    <TextView
-        android:id="@+id/text_view_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:background="#4db6ac"
-        android:text="Hello"
-        android:textColor="#546e7a"
-        android:textSize="32sp" />
-
-    <TextView
-        android:id="@+id/text_view_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:background="#b71c1c"
-        android:text="Android"
-        android:textColor="#546e7a"
-        android:textSize="32sp" />
-
-    <ImageView
-        android:id="@+id/yui"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/text_view_1"
-        android:layout_centerHorizontal="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/yui" />
-
-    <TextView
-        android:id="@+id/yui_love"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/yui"
-        android:background="#09090a"
-        android:text="유이사랑"
-        android:textColor="#f7f8f9"
-        android:textSize="32sp" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/yui_love"
-        android:layout_toLeftOf="@id/yui_love"
-        android:text="애프터"
-        android:background="#f7f3f3"
-        android:textColor="#060606"
-        android:textSize="32sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/yui_love"
-        android:layout_toRightOf="@id/yui_love"
-        android:text="School"
-        android:background="#f7f3f3"
-        android:textColor="#060606"
-        android:textSize="32sp" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/text_view_3"
-        android:text="오른쪽"
-        android:textColor="#0b0a0a"
-        android:textSize="32sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_toRightOf="@id/text_view_1"
-        android:text="오른쪽"
-        android:textColor="#0b0a0a"
-        android:textSize="32sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/text_view_1"
-        android:text="왼쪽"
-        android:textColor="#0b0a0a"
-        android:textSize="32sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@id/text_view_2"
-        android:text="왼쪽"
-        android:textColor="#0b0a0a"
-        android:textSize="32sp" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/text_view_3"
-        android:text="위쪽"
-        android:textColor="#0b0a0a"
-        android:textSize="32sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/text_view_2"
-        android:layout_alignParentRight="true"
-        android:text="위쪽"
-        android:textColor="#0b0a0a"
-        android:textSize="32sp" />
-
-
-</RelativeLayout>
+</FrameLayout>
