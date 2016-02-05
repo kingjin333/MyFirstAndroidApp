@@ -2,6 +2,7 @@ package com.hji.myfirstandroidapp;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
@@ -27,9 +28,10 @@ public class MainActivity extends ActionBarActivity implements CompoundButton.On
         Toast.makeText(MainActivity.this, "check" + isChecked, Toast.LENGTH_SHORT).show();
         //text뷰에 글자를 변경.
         if (isChecked) {
-            mTextView.setText("체크됨");
+            mTextView.setVisibility(View.VISIBLE);
+            // 상수가 정해져있다. View안에.
         } else {
-            mTextView.setText("");
+            mTextView.setVisibility(View.INVISIBLE);
         }
     }
 }
