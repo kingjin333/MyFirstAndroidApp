@@ -17,6 +17,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".ScrollActivity" />
         <activity android:name=".SecondActivity" />
+        <activity android:name=".IntentActivity"></activity>
+        <uses-permission android:name="android.permission.CALL_PHONE"/>
     </application>
 
 </manifest>
