@@ -17,8 +17,12 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".ScrollActivity" />
         <activity android:name=".SecondActivity" />
-        <activity android:name=".IntentActivity"></activity>
-        <uses-permission android:name="android.permission.CALL_PHONE"/>
+        <activity android:name=".IntentActivity" />
+
+        <uses-permission android:name="android.permission.CALL_PHONE" />
+
+        <activity android:name=".exam_lifecycle.LifeCycleActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
     </application>
 
 </manifest>

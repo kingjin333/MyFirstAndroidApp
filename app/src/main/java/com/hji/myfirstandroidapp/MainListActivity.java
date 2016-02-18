@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.hji.myfirstandroidapp.exam_lifecycle.LifeCycleActivity;
+
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -49,6 +51,7 @@ public class MainListActivity extends ListActivity {
         addItem(myData, "버튼 이벤트",MainActivity.class);
         addItem(myData, "ScrollView", ScrollActivity.class);
         addItem(myData, "암시적 인텐트", IntentActivity.class);
+        addItem(myData, "LifeCycle", LifeCycleActivity.class);
         // ----- 메뉴 추가 여기까지
 
         // 이름 순 정렬
