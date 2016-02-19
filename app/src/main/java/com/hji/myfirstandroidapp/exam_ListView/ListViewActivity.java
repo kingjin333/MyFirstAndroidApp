@@ -41,7 +41,7 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
 
         // Adapter
         mAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1,mData);
+                R.layout.item_list,mData);
 
         mListView.setAdapter(mAdapter);
         mGridView.setAdapter(mAdapter);
