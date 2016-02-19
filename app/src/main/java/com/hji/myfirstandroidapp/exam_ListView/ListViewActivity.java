@@ -7,21 +7,25 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.hji.myfirstandroidapp.R;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ListViewActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener, AdapterView.OnItemSelectedListener {
 
     private ListView mListView;
     private GridView mGridView;
-    private ArrayAdapter<String> mAdapter;
-    private List <String> mData;
+    private ArrayAdapter<String> mAraayAdapter;
+    private List <String> mArrayData;
     private Spinner mSpinner;
+    private SimpleAdapter mSimpleAdapter;
 
 
     @Override
@@ -33,19 +37,34 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
         mListView = (ListView) findViewById(R.id.list);
         mGridView = (GridView) findViewById(R.id.grid);
         mSpinner = (Spinner) findViewById(R.id.spinner);
-        // Data
-        mData = new ArrayList<>();
+        // ArrayData
+        mArrayData = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
-            mData.add("data" + i);
+            mArrayData.add("data" + i);
+        }
+        //SimpleData
+        List<Map<String, String>> mSimpleData = new ArrayList<>();
+        for (int i = 0; i < 100; i++) {
+            Map<String, String> map = new HashMap<>();
+            map.put("title" , "title " + i);
+            map.put("description" , "description " + i);
+            mSimpleData.add(map);
         }
 
-        // Adapter
-        mAdapter = new ArrayAdapter<String>(this,
-                R.layout.item_list,mData);
 
-        mListView.setAdapter(mAdapter);
-        mGridView.setAdapter(mAdapter);
-        mSpinner.setAdapter(mAdapter);
+        // ArrayAdapter
+        mAraayAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, mArrayData);
+
+        // SimpleAdapter
+        mSimpleAdapter = new SimpleAdapter(this,
+                mSimpleData, android.R.layout.simple_list_item_2,
+                new String[]{"title", "description"},
+                new int[] {android.R.id.text1, android.R.id.text2});
+
+        mListView.setAdapter(mSimpleAdapter);
+        mGridView.setAdapter(mAraayAdapter);
+        mSpinner.setAdapter(mAraayAdapter);
 
         // 클릭 이벤트
 
@@ -68,11 +87,11 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
         Toast.makeText(ListViewActivity.this, "long click : " + position, Toast.LENGTH_SHORT).show();
 
         // 데이터 삭제
-        mData.remove(position);
+        mArrayData.remove(position);
 
         // 화면 갱신 : Adapter 에게 데이터 변경을 알려준다.
         // -> ListView 에 새로운 내용을 반영
-        mAdapter.notifyDataSetChanged();
+        mAraayAdapter.notifyDataSetChanged();
 
         return true;
     }
