@@ -10,6 +10,7 @@ import android.widget.SimpleAdapter;
 import com.hji.myfirstandroidapp.exam_ListView.ListViewActivity;
 import com.hji.myfirstandroidapp.exam_coffee.CoffeeActivity;
 import com.hji.myfirstandroidapp.exam_lifecycle.LifeCycleActivity;
+import com.hji.myfirstandroidapp.exam_webview.WebViewActivity;
 
 import java.text.Collator;
 import java.util.ArrayList;
@@ -56,6 +57,7 @@ public class MainListActivity extends ListActivity {
         addItem(myData, "LifeCycle", LifeCycleActivity.class);
         addItem(myData, "커피주문예제", CoffeeActivity.class);
         addItem(myData, "ListView예제", ListViewActivity.class);
+        addItem(myData, "WebView예제", WebViewActivity.class);
         // ----- 메뉴 추가 여기까지
 
         // 이름 순 정렬

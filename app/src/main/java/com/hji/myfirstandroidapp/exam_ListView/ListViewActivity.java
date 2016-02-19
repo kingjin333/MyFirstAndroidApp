@@ -15,7 +15,7 @@ import com.hji.myfirstandroidapp.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListViewActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
+public class ListViewActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener, AdapterView.OnItemSelectedListener {
 
     private ListView mListView;
     private GridView mGridView;
@@ -54,6 +54,8 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
         // 롱클릭 이벤트
 
         mListView.setOnItemLongClickListener(this);
+        
+        mSpinner.setOnItemSelectedListener(this);
     }
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -73,5 +75,15 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
         mAdapter.notifyDataSetChanged();
 
         return true;
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }
