@@ -21,8 +21,11 @@
 
         <uses-permission android:name="android.permission.CALL_PHONE" />
 
-        <activity android:name=".exam_lifecycle.LifeCycleActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity
+            android:name=".exam_lifecycle.LifeCycleActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity android:name=".exam_coffee.CoffeeActivity" />
+        <activity android:name=".exam_ListView.ListViewActivity"></activity>
     </application>
 
 </manifest>

@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.hji.myfirstandroidapp.exam_ListView.ListViewActivity;
+import com.hji.myfirstandroidapp.exam_coffee.CoffeeActivity;
 import com.hji.myfirstandroidapp.exam_lifecycle.LifeCycleActivity;
 
 import java.text.Collator;
@@ -52,6 +54,8 @@ public class MainListActivity extends ListActivity {
         addItem(myData, "ScrollView", ScrollActivity.class);
         addItem(myData, "암시적 인텐트", IntentActivity.class);
         addItem(myData, "LifeCycle", LifeCycleActivity.class);
+        addItem(myData, "커피주문예제", CoffeeActivity.class);
+        addItem(myData, "ListView예제", ListViewActivity.class);
         // ----- 메뉴 추가 여기까지
 
         // 이름 순 정렬
