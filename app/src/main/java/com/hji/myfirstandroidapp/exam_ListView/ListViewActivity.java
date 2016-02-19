@@ -26,6 +26,7 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
     private List <String> mArrayData;
     private Spinner mSpinner;
     private SimpleAdapter mSimpleAdapter;
+    private MyAdapter mMyAdapter;
 
 
     @Override
@@ -37,11 +38,13 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
         mListView = (ListView) findViewById(R.id.list);
         mGridView = (GridView) findViewById(R.id.grid);
         mSpinner = (Spinner) findViewById(R.id.spinner);
+
         // ArrayData
         mArrayData = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             mArrayData.add("data" + i);
         }
+
         //SimpleData
         List<Map<String, String>> mSimpleData = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
@@ -50,7 +53,17 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
             map.put("description" , "description " + i);
             mSimpleData.add(map);
         }
+        // MyData
+        List<MyItem> myData = new ArrayList<>();
+        for (int i = 0; i < 100; i++) {
+            if (i % 3 == 0){
+         myData.add(new MyItem(R.mipmap.ic_launcher, "안드로이드" + i, "안드로이드입니다" + i));
 
+            }else{
+
+            myData.add(new MyItem(R.drawable.yui, "유이사랑" + i, "정말\n정말\n예쁜 미소녀" + i));
+        }
+        }
 
         // ArrayAdapter
         mAraayAdapter = new ArrayAdapter<String>(this,
@@ -62,7 +75,11 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
                 new String[]{"title", "description"},
                 new int[] {android.R.id.text1, android.R.id.text2});
 
-        mListView.setAdapter(mSimpleAdapter);
+        // MyAdapter
+        mMyAdapter = new MyAdapter(this, myData);
+
+
+        mListView.setAdapter(mMyAdapter);
         mGridView.setAdapter(mAraayAdapter);
         mSpinner.setAdapter(mAraayAdapter);
 
