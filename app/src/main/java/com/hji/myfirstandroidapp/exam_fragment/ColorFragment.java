@@ -12,6 +12,12 @@ import com.hji.myfirstandroidapp.R;
 
 public class ColorFragment extends Fragment {
 
+    private ColorDataReceiveListener mListener;
+    // callback만들때는 무조건 인터페이스를 사용해서 레퍼런스 참조.
+    public interface ColorDataReceiveListener {
+        void onDataReceive(String data);
+    }
+
 
     private ImageView mImageView;
 
@@ -46,12 +52,21 @@ public class ColorFragment extends Fragment {
         if (bundle != null) {
             int color = bundle.getInt("color");
             mImageView.setBackgroundColor(color);
+
+            // Activity로 callback 발생 시킴
+            if (mListener != null) {
+                mListener.onDataReceive(String.valueOf(color));
+            }
         }
     }
-
     public void setColor(int color) {
         mImageView.setBackgroundColor(color);
 
+
     }
 
+    public void setOnColorDataReceiveListener(ColorDataReceiveListener listener) {
+        mListener = listener;
+
+    }
 }
