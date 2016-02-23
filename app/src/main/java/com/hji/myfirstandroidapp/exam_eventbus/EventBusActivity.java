@@ -6,46 +6,38 @@ import android.widget.Toast;
 
 import com.hji.myfirstandroidapp.R;
 
-public class EventBusActivity extends AppCompatActivity {
-    // 인터페이스
-    public interface MyEventListener {
-        void onEvent();
-    }
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
+public class EventBusActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_bus);
 
+        EventBus.getDefault().register(this);
+
         MyClass myClass = new MyClass();
-        myClass.setOnMyEventListener(new MyEventListener() {
-            @Override
-            public void onEvent() {
-                // 콜 백
-                Toast.makeText(EventBusActivity.this, "콜백 받았다", Toast.LENGTH_SHORT).show();
-            }
-        });
         myClass.eventPublish();
+
+    }
+
+    @Subscribe
+    public void onEvent(String data) {
+        Toast.makeText(EventBusActivity.this, data, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 
     // 이벤트 발생 하는 클래스
     class MyClass {
 
-        private MyEventListener mmListener;
-
-        public void setOnMyEventListener(MyEventListener listener) {
-            mmListener = listener;
-        }
-
         public void eventPublish() {
-            try {
-                Thread.sleep(3000);
-                if (mmListener != null) {
-                    mmListener.onEvent();
-                }
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            EventBus.getDefault().post("잘 됐다");
         }
     }
 }
