@@ -33,7 +33,8 @@
         <activity android:name=".exam_fragment.FragmentExamActivity" />
         <activity android:name=".exam.exam_fragActivity" />
         <activity android:name=".exam.exam2Activity" />
-        <activity android:name=".exam_viewpager.ScreenSlideActivity"></activity>
+        <activity android:name=".exam_viewpager.ScreenSlideActivity" />
+        <activity android:name=".exam_eventbus.EventBusActivity"></activity>
     </application>
 
 </manifest>

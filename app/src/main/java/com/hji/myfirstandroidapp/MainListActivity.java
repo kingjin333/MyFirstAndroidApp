@@ -10,6 +10,7 @@ import android.widget.SimpleAdapter;
 import com.hji.myfirstandroidapp.exam.exam_fragActivity;
 import com.hji.myfirstandroidapp.exam_ListView.ListViewActivity;
 import com.hji.myfirstandroidapp.exam_coffee.CoffeeActivity;
+import com.hji.myfirstandroidapp.exam_eventbus.EventBusActivity;
 import com.hji.myfirstandroidapp.exam_fragment.FragmentExamActivity;
 import com.hji.myfirstandroidapp.exam_lifecycle.LifeCycleActivity;
 import com.hji.myfirstandroidapp.exam_viewpager.ScreenSlideActivity;
@@ -64,6 +65,7 @@ public class MainListActivity extends ListActivity {
         addItem(myData, "Fragment", FragmentExamActivity.class);
         addItem(myData, "Fragment예제", exam_fragActivity.class);
         addItem(myData, "ViewPager", ScreenSlideActivity.class);
+        addItem(myData, "EventBus", EventBusActivity.class);
         // ----- 메뉴 추가 여기까지
 
         // 이름 순 정렬
