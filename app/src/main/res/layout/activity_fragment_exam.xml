@@ -17,7 +17,7 @@
         android:text="fragment 추가" />
 
     <fragment
-        android:id="@+id/frag1"
+        android:id="@+id/frag"
         android:name="com.hji.myfirstandroidapp.exam_fragment.ColorFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"

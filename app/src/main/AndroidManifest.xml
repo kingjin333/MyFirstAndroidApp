@@ -30,7 +30,10 @@
         <activity android:name=".exam_coffee.CoffeeActivity" />
         <activity android:name=".exam_ListView.ListViewActivity" />
         <activity android:name=".exam_webview.WebViewActivity" />
-        <activity android:name=".exam_fragment.FragmentExamActivity"></activity>
+        <activity android:name=".exam_fragment.FragmentExamActivity" />
+        <activity android:name=".exam.exam_fragActivity" />
+        <activity android:name=".exam.exam2Activity" />
+        <activity android:name=".exam_viewpager.ScreenSlideActivity"></activity>
     </application>
 
 </manifest>

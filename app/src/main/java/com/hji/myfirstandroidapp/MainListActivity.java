@@ -7,10 +7,12 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.hji.myfirstandroidapp.exam.exam_fragActivity;
 import com.hji.myfirstandroidapp.exam_ListView.ListViewActivity;
 import com.hji.myfirstandroidapp.exam_coffee.CoffeeActivity;
 import com.hji.myfirstandroidapp.exam_fragment.FragmentExamActivity;
 import com.hji.myfirstandroidapp.exam_lifecycle.LifeCycleActivity;
+import com.hji.myfirstandroidapp.exam_viewpager.ScreenSlideActivity;
 import com.hji.myfirstandroidapp.exam_webview.WebViewActivity;
 
 import java.text.Collator;
@@ -60,6 +62,8 @@ public class MainListActivity extends ListActivity {
         addItem(myData, "ListView 예제", ListViewActivity.class);
         addItem(myData, "WebView 예제", WebViewActivity.class);
         addItem(myData, "Fragment", FragmentExamActivity.class);
+        addItem(myData, "Fragment예제", exam_fragActivity.class);
+        addItem(myData, "ViewPager", ScreenSlideActivity.class);
         // ----- 메뉴 추가 여기까지
 
         // 이름 순 정렬
