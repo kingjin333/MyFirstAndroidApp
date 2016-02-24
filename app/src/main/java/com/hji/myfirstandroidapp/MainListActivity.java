@@ -7,11 +7,13 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.hji.myfirstandroidapp.exam.BasketBallActivity;
 import com.hji.myfirstandroidapp.exam_ListView.ListViewActivity;
 import com.hji.myfirstandroidapp.exam_coffee.CoffeeActivity;
 import com.hji.myfirstandroidapp.exam_eventbus.EventBusActivity;
 import com.hji.myfirstandroidapp.exam_fragment.FragmentExamActivity;
 import com.hji.myfirstandroidapp.exam_lifecycle.LifeCycleActivity;
+import com.hji.myfirstandroidapp.exam_thread.AsyncTaskActivity;
 import com.hji.myfirstandroidapp.exam_thread.ThreadActivity;
 import com.hji.myfirstandroidapp.exam_viewpager.ScreenSlideActivity;
 import com.hji.myfirstandroidapp.exam_webview.WebViewActivity;
@@ -66,6 +68,8 @@ public class MainListActivity extends ListActivity {
         addItem(myData, "ViewPager", ScreenSlideActivity.class);
         addItem(myData, "EventBus", EventBusActivity.class);
         addItem(myData, "Thread", ThreadActivity.class);
+        addItem(myData, "AsyncTask", AsyncTaskActivity.class);
+        addItem(myData, "농구 예제", BasketBallActivity.class);
         // ----- 메뉴 추가 여기까지
 
         // 이름 순 정렬

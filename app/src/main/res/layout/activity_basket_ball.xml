@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.hji.myfirstandroidapp.exam.BasketBallActivity">
 
-   
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,6 +34,7 @@
                 android:textSize="15dp" />
 
             <TextView
+                android:id="@+id/score_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -41,6 +42,7 @@
                 android:textSize="50dp" />
 
             <Button
+                android:id="@+id/point3_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -49,6 +51,7 @@
                 android:text="+3 POINTS" />
 
             <Button
+                android:id="@+id/point2_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -57,6 +60,7 @@
                 android:text="+2 POINTS" />
 
             <Button
+                android:id="@+id/point1_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -85,6 +89,7 @@
                 android:textSize="15dp" />
 
             <TextView
+                android:id="@+id/score_text2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -92,6 +97,7 @@
                 android:textSize="50dp" />
 
             <Button
+                android:id="@+id/point3_btn2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -100,6 +106,7 @@
                 android:text="+3 POINTS" />
 
             <Button
+                android:id="@+id/point2_btn2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -108,6 +115,7 @@
                 android:text="+2 POINTS" />
 
             <Button
+                android:id="@+id/point1_btn2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -119,6 +127,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/reset_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
