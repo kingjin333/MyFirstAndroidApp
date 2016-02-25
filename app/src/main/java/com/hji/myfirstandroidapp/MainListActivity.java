@@ -8,7 +8,9 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import com.hji.myfirstandroidapp.exam.BasketBallActivity;
+import com.hji.myfirstandroidapp.exam.SignUpActivity;
 import com.hji.myfirstandroidapp.exam_ListView.ListViewActivity;
+import com.hji.myfirstandroidapp.exam_broadcast.BroadCastActivity;
 import com.hji.myfirstandroidapp.exam_coffee.CoffeeActivity;
 import com.hji.myfirstandroidapp.exam_eventbus.EventBusActivity;
 import com.hji.myfirstandroidapp.exam_fragment.FragmentExamActivity;
@@ -70,6 +72,8 @@ public class MainListActivity extends ListActivity {
         addItem(myData, "Thread", ThreadActivity.class);
         addItem(myData, "AsyncTask", AsyncTaskActivity.class);
         addItem(myData, "농구 예제", BasketBallActivity.class);
+        addItem(myData, "로그인 예제", SignUpActivity.class);
+        addItem(myData, "BroadCast Receiver", BroadCastActivity.class);
         // ----- 메뉴 추가 여기까지
 
         // 이름 순 정렬
