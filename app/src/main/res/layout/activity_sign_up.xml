@@ -55,23 +55,25 @@
             android:orientation="horizontal">
 
             <RadioGroup
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
                 android:id="@+id/radio_group"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"></RadioGroup>
+                android:layout_width="match_parent">
 
             <RadioButton
                 android:id="@+id/man_radio"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="남성" />
 
             <RadioButton
                 android:id="@+id/woman_radio"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="여성" />
+        </RadioGroup>
         </LinearLayout>
 
     </LinearLayout>
