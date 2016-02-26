@@ -74,6 +74,7 @@ public class MainListActivity extends ListActivity {
         addItem(myData, "농구 예제", BasketBallActivity.class);
         addItem(myData, "로그인 예제", SignUpActivity.class);
         addItem(myData, "BroadCast Receiver", BroadCastActivity.class);
+        addItem(myData, "SignUp", SignUpActivity.class);
         // ----- 메뉴 추가 여기까지
 
         // 이름 순 정렬
