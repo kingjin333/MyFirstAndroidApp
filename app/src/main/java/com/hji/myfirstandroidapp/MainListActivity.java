@@ -19,6 +19,7 @@ import com.hji.myfirstandroidapp.exam_thread.AsyncTaskActivity;
 import com.hji.myfirstandroidapp.exam_thread.ThreadActivity;
 import com.hji.myfirstandroidapp.exam_viewpager.ScreenSlideActivity;
 import com.hji.myfirstandroidapp.exam_webview.WebViewActivity;
+import com.hji.myfirstandroidapp.notepad.NoteMainActivity;
 
 import java.text.Collator;
 import java.util.ArrayList;
@@ -75,6 +76,8 @@ public class MainListActivity extends ListActivity {
         addItem(myData, "로그인 예제", SignUpActivity.class);
         addItem(myData, "BroadCast Receiver", BroadCastActivity.class);
         addItem(myData, "SignUp", SignUpActivity.class);
+        addItem(myData, "NotePad", NoteMainActivity.class);
+
         // ----- 메뉴 추가 여기까지
 
         // 이름 순 정렬
