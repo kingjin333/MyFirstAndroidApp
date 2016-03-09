@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hji.myfirstandroidapp" >
+    package="com.hji.myfirstandroidapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -9,8 +9,8 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <activity android:name=".MainListActivity" >
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,8 +44,8 @@
         <receiver
             android:name=".exam_broadcast.MyReceiver"
             android:enabled="true"
-            android:exported="true" >
-            <intent-filter android:priority="10000" >
+            android:exported="true">
+            <intent-filter android:priority="10000">
                 <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
             </intent-filter>
         </receiver>
@@ -55,8 +55,8 @@
             android:name=".notepad.NoteMainActivity"
             android:label="@string/title_activity_note_main"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".notepad.activitys.MemoEditActivity" >
-        </activity>
+        <activity android:name=".notepad.activitys.MemoEditActivity"></activity>
+        <activity android:name=".notepad.fragments.MemoFragmentListActivity"></activity>
     </application>
 
 </manifest>
