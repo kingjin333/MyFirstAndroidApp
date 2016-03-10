@@ -29,10 +29,10 @@
             android:name=".exam_lifecycle.LifeCycleActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name=".exam_coffee.CoffeeActivity" />
-        <activity android:name=".exam_ListView.ListViewActivity" />
+        <activity android:name=".exam_listView.ListViewActivity" />
         <activity android:name=".exam_webview.WebViewActivity" />
+        <activity android:name=".exam_listview.ListViewActivity" />
         <activity android:name=".exam_fragment.FragmentExamActivity" />
-        <activity android:name=".exam.exam2Activity" />
         <activity android:name=".exam_viewpager.ScreenSlideActivity" />
         <activity android:name=".exam_eventbus.EventBusActivity" />
         <activity android:name=".exam.BasketBallActivity" />
@@ -57,9 +57,10 @@
             android:label="@string/title_activity_note_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".notepad.activitys.MemoEditActivity" />
-        <activity android:name=".notepad.fragments.MemoListFragmentActivity" />
         <activity android:name=".exam_wether.WetherActivity" />
-        <activity android:name=".exam_fab_dialog.FabAndDialogActivity"></activity>
+        <activity android:name=".exam_fab_dialog.FabAndDialogActivity" />
+        <activity android:name=".exam.ScoreActivity" />
+        <activity android:name=".exam.Exam212Activity"></activity>
     </application>
 
 </manifest>

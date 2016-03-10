@@ -1,6 +1,5 @@
 package com.hji.myfirstandroidapp.exam_lifecycle;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -9,39 +8,34 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.hji.myfirstandroidapp.exam_listView.ListViewActivity;
+
 public class LifeCycleActivity extends AppCompatActivity {
 
     private static final String TAG = LifeCycleActivity.class.getSimpleName();
 
-    private String mValue = "값없음";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        mValue = "값있음!!!!!!!";
         super.onCreate(savedInstanceState);
+
         Button button = new Button(this);
         button.setText("버튼");
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LifeCycleActivity.this, ListActivity.class));
+                startActivity(new Intent(LifeCycleActivity.this, ListViewActivity.class));
             }
         });
-        setContentView(button);
-        Log.d(TAG, "onCreate");
-        // 복원 처리.
-        if (savedInstanceState != null){
-            mValue = savedInstanceState.getString("value");
-        }
 
+        setContentView(button);
+
+        Log.d(TAG, "onCreate : 생성");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         Log.d(TAG, "onResume : 재개");
-        Log.d(TAG, "값 : " + mValue);
     }
 
     @Override
@@ -55,7 +49,6 @@ public class LifeCycleActivity extends AppCompatActivity {
         super.onStart();
         Log.d(TAG, "onStart : 시작");
     }
-
 
     @Override
     protected void onRestart() {
@@ -80,13 +73,5 @@ public class LifeCycleActivity extends AppCompatActivity {
         super.onConfigurationChanged(newConfig);
 
         Log.d(TAG, "onConfigurationChanged");
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        Log.d(TAG, "onConfigurationChanged");
-        // 강제 종료시 보존해야 하는 값을 outState 에 저장.
-        outState.putString("value", mValue);
     }
 }
