@@ -1,5 +1,7 @@
 package com.hji.myfirstandroidapp.notepad.fragments;
 
+import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,16 +9,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.hji.myfirstandroidapp.R;
+import com.hji.myfirstandroidapp.notepad.activitys.MemoEditActivity;
 import com.hji.myfirstandroidapp.notepad.adapters.MemoCursorAdapter;
+import com.hji.myfirstandroidapp.notepad.db.MemoContract;
 import com.hji.myfirstandroidapp.notepad.facade.MemoFacade;
+import com.hji.myfirstandroidapp.notepad.models.Memo;
 
 /**
  * Created by 현 on 2016-03-09.
  */
-public class MemoListFragment extends Fragment {
+public class MemoListFragment extends Fragment implements AdapterView.OnItemClickListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -35,5 +41,19 @@ public class MemoListFragment extends Fragment {
 
 
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(this);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Cursor cursor = (Cursor) (parent.getAdapter()).getItem(position);
+
+        Memo memo = Memo.cursorToMemo(cursor);
+
+        Intent intent = new Intent(getActivity(), MemoEditActivity.class);
+        intent.putExtra(MemoContract.MemoEntry._ID, cursor.getLong(0));
+        intent.putExtra(MemoContract.MemoEntry.COLUMN_NAME_TITLE, memo.getTitle());
+        intent.putExtra(MemoContract.MemoEntry.COLUMN_NAME_MEMO, memo.getMemo());
+        startActivity(intent);
     }
 }
