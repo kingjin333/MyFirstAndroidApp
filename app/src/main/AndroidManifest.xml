@@ -56,8 +56,10 @@
             android:name=".notepad.NoteMainActivity"
             android:label="@string/title_activity_note_main"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".notepad.activitys.MemoEditActivity"></activity>
-        <activity android:name=".notepad.fragments.MemoListFragmentActivity"></activity>
+        <activity android:name=".notepad.activitys.MemoEditActivity" />
+        <activity android:name=".notepad.fragments.MemoListFragmentActivity" />
+        <activity android:name=".exam_wether.WetherActivity" />
+        <activity android:name=".exam_fab_dialog.FabAndDialogActivity"></activity>
     </application>
 
 </manifest>

@@ -13,6 +13,7 @@ import com.hji.myfirstandroidapp.exam_ListView.ListViewActivity;
 import com.hji.myfirstandroidapp.exam_broadcast.BroadCastActivity;
 import com.hji.myfirstandroidapp.exam_coffee.CoffeeActivity;
 import com.hji.myfirstandroidapp.exam_eventbus.EventBusActivity;
+import com.hji.myfirstandroidapp.exam_fab_dialog.FabAndDialogActivity;
 import com.hji.myfirstandroidapp.exam_fragment.FragmentExamActivity;
 import com.hji.myfirstandroidapp.exam_lifecycle.LifeCycleActivity;
 import com.hji.myfirstandroidapp.exam_thread.AsyncTaskActivity;
@@ -67,6 +68,7 @@ public class MainListActivity extends ListActivity {
         addItem(myData, "커피주문 예제", CoffeeActivity.class);
         addItem(myData, "ListView 예제", ListViewActivity.class);
         addItem(myData, "WebView 예제", WebViewActivity.class);
+        addItem(myData, "Fab + dialog", FabAndDialogActivity.class);
         addItem(myData, "Fragment", FragmentExamActivity.class);
         addItem(myData, "ViewPager", ScreenSlideActivity.class);
         addItem(myData, "EventBus", EventBusActivity.class);

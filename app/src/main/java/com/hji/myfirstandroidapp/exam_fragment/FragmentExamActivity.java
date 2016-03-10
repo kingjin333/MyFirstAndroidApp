@@ -14,26 +14,44 @@ public class FragmentExamActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragment_exam);
-        ColorFragment frag1 = (ColorFragment) getSupportFragmentManager().findFragmentById(R.id.frag1);
+        setContentView(R.layout.activity_exam_frag);
 
+        ColorFragment frag1 = (ColorFragment) getSupportFragmentManager().findFragmentById(
+                R.id.frag1);
         frag1.setColor(Color.BLUE);
-
-        Button button = (Button) findViewById(R.id.add_frag_button);
-        button.setOnClickListener(this);
+        Button button1 = (Button) findViewById(R.id.first_btn);
+        button1.setOnClickListener(this);
+        Button button2 = (Button) findViewById(R.id.second_btn);
+        button2.setOnClickListener(this);
+        Button button3 = (Button) findViewById(R.id.third_btn);
+        button3.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        // 랜덤한 색상.
-        int randomColor =
-        Color.rgb((int) (Math.random() * 256), (int) (Math.random() * 256), (int) (Math.random() * 256));
+        // 랜덤한 색상
+        int randomColor = Color.rgb((int) (Math.random() * 256),
+                (int) (Math.random() * 256),
+                (int) (Math.random() * 256));
 
         // 프래그먼트를 코드로 추가
         ColorFragment fragment = ColorFragment.newInstance(randomColor);
         fragment.setOnColorDataReceiveListener(this);
+
+        int contentsId = R.id.frag1;
+        switch (v.getId()) {
+            case R.id.first_btn:
+                contentsId = R.id.frag1;
+                break;
+            case R.id.second_btn:
+                contentsId = R.id.frag2;
+                break;
+            case R.id.third_btn:
+                contentsId = R.id.frag3;
+        }
+
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.contents, fragment)
+                .replace(contentsId, fragment)
                 .commit();
     }
 

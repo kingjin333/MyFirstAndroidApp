@@ -2,6 +2,7 @@ package com.hji.myfirstandroidapp.exam_fragment;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,11 +14,10 @@ import com.hji.myfirstandroidapp.R;
 public class ColorFragment extends Fragment {
 
     private ColorDataReceiveListener mListener;
-    // callback만들때는 무조건 인터페이스를 사용해서 레퍼런스 참조.
+
     public interface ColorDataReceiveListener {
         void onDataReceive(String data);
     }
-
 
     private ImageView mImageView;
 
@@ -26,15 +26,16 @@ public class ColorFragment extends Fragment {
     }
 
     public static ColorFragment newInstance(int color) {
+
         ColorFragment fragment = new ColorFragment();
 
         Bundle bundle = new Bundle();
         bundle.putInt("color", color);
 
         fragment.setArguments(bundle);
+
         return fragment;
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,8 +45,9 @@ public class ColorFragment extends Fragment {
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         mImageView = (ImageView) view.findViewById(R.id.color_image);
 
         Bundle bundle = getArguments();
@@ -59,14 +61,12 @@ public class ColorFragment extends Fragment {
             }
         }
     }
+
     public void setColor(int color) {
         mImageView.setBackgroundColor(color);
-
-
     }
 
     public void setOnColorDataReceiveListener(ColorDataReceiveListener listener) {
         mListener = listener;
-
     }
 }
