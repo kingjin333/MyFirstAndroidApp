@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
 
@@ -15,12 +14,12 @@
 
 
     <EditText
-        android:padding="8dp"
-        android:background="#4db6ac"
         android:id="@+id/contents_memo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#4db6ac"
         android:gravity="top"
-        android:hint="내용" />
+        android:hint="내용"
+        android:padding="8dp" />
 
 </LinearLayout>

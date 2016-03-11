@@ -1,4 +1,4 @@
-package com.hji.myfirstandroidapp.notepad;
+package com.hji.myfirstandroidapp.notepad.activitys;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +14,6 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.hji.myfirstandroidapp.R;
-import com.hji.myfirstandroidapp.notepad.activitys.MemoEditActivity;
 import com.hji.myfirstandroidapp.notepad.fragments.MemoListFragment;
 
 public class NoteMainActivity extends AppCompatActivity
