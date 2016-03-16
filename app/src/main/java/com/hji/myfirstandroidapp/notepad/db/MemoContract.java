@@ -3,7 +3,7 @@ package com.hji.myfirstandroidapp.notepad.db;
 import android.provider.BaseColumns;
 
 /**
- * 스키마
+ * 스키마 변동있을시 반드시 앱을 삭제하거나 디비를 한번 날려줘야함.
  */
 public class MemoContract {
     public static abstract class MemoEntry implements BaseColumns{
@@ -18,7 +18,7 @@ public class MemoContract {
                 MemoEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 MemoEntry.COLUMN_NAME_TITLE + " TEXT DEFAULT '제목없음', " +
                 MemoEntry.COLUMN_NAME_MEMO + " TEXT, " +
-                MemoEntry.COLUMN_NAME_DATE + " TEXT NOT NULL" +
+                MemoEntry.COLUMN_NAME_DATE + " TEXT DEFAULT CURRENT_TIMESTAMP" +
                 ");";
     }
 }

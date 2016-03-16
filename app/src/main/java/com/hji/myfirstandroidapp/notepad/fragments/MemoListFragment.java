@@ -3,7 +3,6 @@ package com.hji.myfirstandroidapp.notepad.fragments;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -27,6 +26,7 @@ import com.hji.myfirstandroidapp.notepad.adapters.MemoCursorAdapter;
 import com.hji.myfirstandroidapp.notepad.db.MemoContract;
 import com.hji.myfirstandroidapp.notepad.facade.MemoFacade;
 import com.hji.myfirstandroidapp.notepad.models.Memo;
+import com.hji.myfirstandroidapp.notepad.provider.MyMemoProvider;
 
 import java.util.Arrays;
 
@@ -58,11 +58,12 @@ public class MemoListFragment extends Fragment implements AdapterView.OnItemClic
             @Override
             public void bindView(View view, Context context, Cursor cursor) {
                 super.bindView(view, context, cursor);
-                if (mIsCheckedList != null && mIsCheckedList[cursor.getPosition()]) {
-                    view.setBackgroundColor(Color.BLUE);
-                } else {
-                    view.setBackgroundColor(Color.WHITE);
-                }
+                //TODO 검토
+//                if (mIsCheckedList != null && mIsCheckedList[cursor.getPosition()]) {
+//                    view.setBackgroundColor(Color.BLUE);
+//                } else {
+//                    view.setBackgroundColor(Color.WHITE);
+//                }
             }
         };
 
@@ -82,8 +83,12 @@ public class MemoListFragment extends Fragment implements AdapterView.OnItemClic
     public void onResume() {
         super.onResume();
 
-        // BaseAdapter 에서의 데이터 변경 후 notifyDataSetChanged 와 동일
-        mAdapter.swapCursor(mFacade.queryAllMemos());
+        Cursor cursor = getActivity().getContentResolver().query(MyMemoProvider.CONTENT_URI,
+                null,
+                null,
+                null,
+                null);
+        mAdapter.swapCursor(cursor);
     }
 
     @Override
@@ -165,16 +170,12 @@ public class MemoListFragment extends Fragment implements AdapterView.OnItemClic
 
 //                String selection2 = "title LIKE '%"++"%' OR memo LIKE %?%"
                 String selection = "? LIKE '%" + newText + "%' OR ? LIKE '%" + newText + "%'";
-                String[] selectionArgs = new String[]{
-                        MemoContract.MemoEntry.COLUMN_NAME_TITLE,
-                        MemoContract.MemoEntry.COLUMN_NAME_MEMO
-                };
-                Cursor cursor = mMemoFacade.queryMemos(null,
-                        selection,
-                        selectionArgs,
+                Cursor cursor = getActivity().getContentResolver().query(MyMemoProvider.CONTENT_URI,
                         null,
+                        selection,
                         null,
                         null);
+
                 mAdapter.swapCursor(cursor);
                 return true;
             }
@@ -201,7 +202,7 @@ public class MemoListFragment extends Fragment implements AdapterView.OnItemClic
                 setTitle("메모 리스트");
                 setHasOptionsMenu(false);
 
-                // 모두 false로 셋팅
+                // 모두 false 로 셋팅
                 Arrays.fill(mIsCheckedList, false);
 
                 mAdapter.notifyDataSetChanged();
