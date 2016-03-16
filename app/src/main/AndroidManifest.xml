@@ -60,7 +60,13 @@
         <activity android:name=".exam_wether.WetherActivity" />
         <activity android:name=".exam_fab_dialog.FabAndDialogActivity" />
         <activity android:name=".exam.ScoreActivity" />
-        <activity android:name=".exam.Exam212Activity"></activity>
+        <activity android:name=".exam.Exam212Activity" />
+
+        <provider
+            android:name=".notepad.provider.MyMemoProvider"
+            android:authorities="com.hji.myfirstandroidapp.provider"
+            android:enabled="true"
+            android:exported="true"></provider>
     </application>
 
 </manifest>
