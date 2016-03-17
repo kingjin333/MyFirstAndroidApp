@@ -27,7 +27,6 @@ import com.hji.myfirstandroidapp.R;
 import com.hji.myfirstandroidapp.notepad.activitys.MemoEditActivity;
 import com.hji.myfirstandroidapp.notepad.adapters.MemoCursorAdapter;
 import com.hji.myfirstandroidapp.notepad.db.MemoContract;
-import com.hji.myfirstandroidapp.notepad.facade.MemoFacade;
 import com.hji.myfirstandroidapp.notepad.models.Memo;
 import com.hji.myfirstandroidapp.notepad.provider.MyMemoProvider;
 
@@ -40,12 +39,10 @@ import java.util.Collections;
 public class MemoListFragment extends Fragment implements AdapterView.OnItemClickListener, View.OnKeyListener, AdapterView.OnItemLongClickListener {
     private static final String TAG = MemoListFragment.class.getSimpleName();
     private MemoCursorAdapter mAdapter;
-    private MemoFacade mFacade;
     private ListView mListView;
     private boolean mMultiChecked;
     private ArrayList<Boolean> mIsCheckedList;
     private int mSelectionCount = 0;
-    private MemoFacade mMemoFacade;
 
     @Nullable
     @Override
@@ -57,7 +54,6 @@ public class MemoListFragment extends Fragment implements AdapterView.OnItemClic
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         setTitle("메모 리스트");
         mListView = (ListView) view.findViewById(R.id.list);
-        mFacade = new MemoFacade(getActivity());
         mAdapter = new MemoCursorAdapter(getContext(), null) {
             @Override
             public void bindView(View view, Context context, Cursor cursor) {
@@ -80,7 +76,6 @@ public class MemoListFragment extends Fragment implements AdapterView.OnItemClic
         view.setFocusableInTouchMode(true);
         view.requestFocus();
         view.setOnKeyListener(this);
-        mMemoFacade = new MemoFacade(getActivity());
     // Loader 시작
     getLoaderManager().initLoader(0, null, new LoaderManager.LoaderCallbacks<Cursor>() {
         @Override
@@ -177,24 +172,35 @@ public class MemoListFragment extends Fragment implements AdapterView.OnItemClic
         // https://pluu.github.io/blog/android/2015/05/19/android-toolbar-searchview/
         SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            android.os.Handler handler = new android.os.Handler();
             @Override
             public boolean onQueryTextSubmit(String query) {
                 return false;
             }
 
             @Override
-            public boolean onQueryTextChange(String newText) {
+            public boolean onQueryTextChange(final String newText) {
                 Log.d(TAG, "onQueryTextChange : " + newText);
 
 //                String selection2 = "title LIKE '%"++"%' OR memo LIKE %?%"
-                String selection = "? LIKE '%" + newText + "%' OR ? LIKE '%" + newText + "%'";
-                Cursor cursor = getActivity().getContentResolver().query(MyMemoProvider.CONTENT_URI,
-                        null,
-                        selection,
-                        null,
-                        null);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        String selection = "title LIKE '%" + newText + "%' OR memo LIKE '%" + newText + "%'";
+                        final Cursor cursor = getActivity().getContentResolver().query(MyMemoProvider.CONTENT_URI,
+                                null,
+                                selection,
+                                null,
+                                null);
 
-                mAdapter.swapCursor(cursor);
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                mAdapter.swapCursor(cursor);
+                            }
+                        });
+                    }
+                }).start();
                 return true;
             }
         });
