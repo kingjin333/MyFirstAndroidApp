@@ -10,17 +10,18 @@ import android.widget.SimpleAdapter;
 import com.hji.myfirstandroidapp.exam.BasketBallActivity;
 import com.hji.myfirstandroidapp.exam.Exam212Activity;
 import com.hji.myfirstandroidapp.exam.SignUpActivity;
-import com.hji.myfirstandroidapp.exam_listView.ListViewActivity;
 import com.hji.myfirstandroidapp.exam_broadcast.BroadCastActivity;
 import com.hji.myfirstandroidapp.exam_coffee.CoffeeActivity;
 import com.hji.myfirstandroidapp.exam_eventbus.EventBusActivity;
 import com.hji.myfirstandroidapp.exam_fab_dialog.FabAndDialogActivity;
 import com.hji.myfirstandroidapp.exam_fragment.FragmentExamActivity;
 import com.hji.myfirstandroidapp.exam_lifecycle.LifeCycleActivity;
+import com.hji.myfirstandroidapp.exam_listView.ListViewActivity;
 import com.hji.myfirstandroidapp.exam_thread.AsyncTaskActivity;
 import com.hji.myfirstandroidapp.exam_thread.ThreadActivity;
 import com.hji.myfirstandroidapp.exam_viewpager.ScreenSlideActivity;
 import com.hji.myfirstandroidapp.exam_webview.WebViewActivity;
+import com.hji.myfirstandroidapp.load_picture.PictureActivity;
 import com.hji.myfirstandroidapp.notepad.activitys.NoteMainActivity;
 
 import java.text.Collator;
@@ -81,6 +82,7 @@ public class MainListActivity extends ListActivity {
         addItem(myData, "BroadCast Receiver", BroadCastActivity.class);
         addItem(myData, "SignUp", SignUpActivity.class);
         addItem(myData, "NotePad", NoteMainActivity.class);
+        addItem(myData, "사진 보기 - Provider", PictureActivity.class);
 
         // ----- 메뉴 추가 여기까지
 
