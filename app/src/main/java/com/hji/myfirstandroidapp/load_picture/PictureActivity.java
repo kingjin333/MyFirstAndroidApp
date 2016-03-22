@@ -66,18 +66,17 @@ public class PictureActivity extends AppCompatActivity implements LoaderManager.
             mAsyncBitmapLoader = new AsyncBitmapLoader(context);
             mAsyncBitmapLoader.setBitmapLoadListener(new AsyncBitmapLoader.BitmapLoadListener() {
                 @Override
-                public Bitmap getBitmap(int position) {
+                public Bitmap getBitmap(String key) {
                     // Background Thread
-                    Cursor cursor = (Cursor) getItem(position);
-                    String path = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA));
 
                     BitmapFactory.Options options = new BitmapFactory.Options();
                     options.inSampleSize = 4;   // 2의 배수, 큰 값일 수록 이미지 크기가 작아짐
 
-                    return BitmapFactory.decodeFile(path, options);
+                    return BitmapFactory.decodeFile(key, options);
                 }
             });
         }
+
 
         @Override
         public View newView(Context context, Cursor cursor, ViewGroup parent) {
@@ -91,7 +90,8 @@ public class PictureActivity extends AppCompatActivity implements LoaderManager.
         @Override
         public void bindView(View view, Context context, Cursor cursor) {
             ViewHolder holder = (ViewHolder) view.getTag();
-            mAsyncBitmapLoader.loadBitmap(cursor.getPosition(), holder.imageView);
+            mAsyncBitmapLoader.loadBitmap(cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)),
+                    holder.imageView);
         }
 
         static class ViewHolder {

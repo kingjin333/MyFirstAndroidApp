@@ -28,7 +28,7 @@ import com.hji.myfirstandroidapp.R;
 import com.hji.myfirstandroidapp.notepad.db.MemoContract;
 import com.hji.myfirstandroidapp.notepad.facade.MemoFacade;
 import com.hji.myfirstandroidapp.notepad.provider.MyMemoProvider;
-import com.hji.myfirstandroidapp.notepad.utils.IntentUtil;
+import com.hji.myfirstandroidapp.utils.IntentUtil;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
