@@ -8,7 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.hji.myfirstandroidapp.exam_listView.ListViewActivity;
+import com.hji.myfirstandroidapp.exam_listview.ListViewActivity;
 
 public class LifeCycleActivity extends AppCompatActivity {
 

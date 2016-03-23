@@ -31,9 +31,8 @@
             android:name=".exam_lifecycle.LifeCycleActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name=".exam_coffee.CoffeeActivity" />
-        <activity android:name=".exam_listView.ListViewActivity" />
-        <activity android:name=".exam_webview.WebViewActivity" />
         <activity android:name=".exam_listview.ListViewActivity" />
+        <activity android:name=".exam_webview.WebViewActivity" />
         <activity android:name=".exam_fragment.FragmentExamActivity" />
         <activity android:name=".exam_viewpager.ScreenSlideActivity" />
         <activity android:name=".exam_eventbus.EventBusActivity" />
@@ -58,10 +57,17 @@
             android:name=".notepad.activitys.NoteMainActivity"
             android:label="@string/title_activity_note_main"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".notepad.activitys.MemoEditActivity" />
+        <!-- http://developer.android.com/intl/ko/training/basics/intents/filters.html#AddIntentFilter -->
+        <activity android:name=".notepad.activitys.MemoEditActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".exam_wether.WetherActivity" />
         <activity android:name=".exam_fab_dialog.FabAndDialogActivity" />
-        <activity android:name=".exam.ScoreActivity" />
         <activity android:name=".exam.Exam212Activity" />
 
         <provider
