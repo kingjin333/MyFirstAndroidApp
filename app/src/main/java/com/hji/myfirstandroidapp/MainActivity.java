@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.hji.myfirstandroidapp.load_picture.PictureActivity;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static final String TAG = MainActivity.class.getSimpleName();
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         // SecondActivity 로 전환하겠다는 intent
-        Intent intent = new Intent(this, SecondActivity.class);
+        Intent intent = new Intent(this, PictureActivity.SecondActivity.class);
 
         // 이름, 나이 가져와서 intent에 추가
         intent.putExtra("name", mNameEditText.getText().toString());
