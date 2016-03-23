@@ -14,7 +14,7 @@ import com.hji.myfirstandroidapp.notepad.db.MemoContract;
  * Created by 현 on 2016-03-23.
  */
 public class MemoRecyclerAdapter extends RecyclerView.Adapter<MemoRecyclerAdapter.Holder> {
-    private final Cursor mCursor;
+    private  Cursor mCursor;
 
     public MemoRecyclerAdapter(Cursor cursor) {
         mCursor = cursor;
@@ -49,6 +49,10 @@ public class MemoRecyclerAdapter extends RecyclerView.Adapter<MemoRecyclerAdapte
         }
         return mCursor.getCount();
 //        return mCursor == null ? 0 : mCursor.getCount();
+    }
+    public void swapCursor(Cursor data) {
+        mCursor = data;
+        notifyDataSetChanged();
     }
 
 
