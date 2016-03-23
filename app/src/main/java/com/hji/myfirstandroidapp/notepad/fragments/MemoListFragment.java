@@ -60,7 +60,14 @@ public class MemoListFragment extends Fragment implements MemoRecyclerAdapter.On
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         setTitle("메모 리스트");
         mListView = (RecyclerView) view.findViewById(R.id.list);
-        mAdapter = new MemoRecyclerAdapter(null);
+        mAdapter = new MemoRecyclerAdapter(null) {
+            @Override
+            public void onBindViewHolder(Holder holder, int position) {
+                super.onBindViewHolder(holder, position);
+
+                changeColor(holder.itemView, position);
+            }
+        };
         mListView.setAdapter(mAdapter);
 
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
@@ -69,8 +76,8 @@ public class MemoListFragment extends Fragment implements MemoRecyclerAdapter.On
         mAdapter.setOnItemClickListener(this);
 
         DefaultItemAnimator animator = new DefaultItemAnimator();
-        animator.setAddDuration(1000);
-        animator.setRemoveDuration(1000);
+        animator.setAddDuration(500);
+        animator.setRemoveDuration(500);
 
         mListView.setItemAnimator(animator);
 
@@ -254,9 +261,6 @@ public class MemoListFragment extends Fragment implements MemoRecyclerAdapter.On
             }
             setTitle("" + mSelectionCount);
 
-            // 색상 값 설정
-            changeColor(view, position);
-
             // 멀티체크 모드 벗어나기
             if (mSelectionCount < 1) {
                 setMultiCheckMode(false);
@@ -286,7 +290,6 @@ public class MemoListFragment extends Fragment implements MemoRecyclerAdapter.On
         // 현재 롱클릭 한 아이템을 선택 하고 다시 그리기
         mIsCheckedSet.add(position);
 
-        changeColor(view, position);
         mAdapter.notifyDataSetChanged();
     }
 }
