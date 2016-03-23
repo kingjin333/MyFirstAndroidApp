@@ -14,6 +14,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -65,8 +66,13 @@ public class MemoListFragment extends Fragment implements MemoRecyclerAdapter.On
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         mListView.setLayoutManager(layoutManager);
 
-        //// TODO: 리스너 구현.
         mAdapter.setOnItemClickListener(this);
+
+        DefaultItemAnimator animator = new DefaultItemAnimator();
+        animator.setAddDuration(1000);
+        animator.setRemoveDuration(1000);
+
+        mListView.setItemAnimator(animator);
 
         //        mListView.setOnItemLongClickListener(this);
 
@@ -190,7 +196,7 @@ public class MemoListFragment extends Fragment implements MemoRecyclerAdapter.On
 
                             setMultiCheckMode(false);
 
-                            mAdapter.notifyDataSetChanged();
+                          //  mAdapter.notifyItemRemoved(Integer.parseInt(finalIds));
                         }
                     }
                 })
