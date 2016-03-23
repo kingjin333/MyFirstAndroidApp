@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
     <EditText
         android:id="@+id/title_memo"
         android:layout_width="match_parent"
@@ -12,20 +11,30 @@
         android:hint="제목"
         android:maxLines="1" />
 
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop" />
-
-
-    <EditText
-        android:id="@+id/contents_memo"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#4db6ac"
-        android:gravity="top"
-        android:hint="내용"
-        android:padding="8dp" />
+        android:background="#c6ff00">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop" />
+
+            <EditText
+                android:id="@+id/contents_memo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="top"
+                android:hint="내용"
+                android:padding="8dp" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
