@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.hji.myfirstandroidapp.chat.ChatActivity;
 import com.hji.myfirstandroidapp.exam.BasketBallActivity;
 import com.hji.myfirstandroidapp.exam.Exam212Activity;
 import com.hji.myfirstandroidapp.exam.SignUpActivity;
@@ -85,6 +86,7 @@ public class MainListActivity extends ListActivity {
         addItem(myData, "NotePad", NoteMainActivity.class);
         addItem(myData, "사진 보기 - Provider", PictureActivity.class);
         addItem(myData, "사진 다운로드 표시 - 네트워크 경유", PictureNetworkActivity.class);
+        addItem(myData, "채팅", ChatActivity.class);
 
         // ----- 메뉴 추가 여기까지
 
