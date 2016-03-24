@@ -14,6 +14,30 @@ public class MsgInfo {
         this.time = time;
     }
 
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public long getTime() {
+        return time;
+    }
+
+    public void setTime(long time) {
+        this.time = time;
+    }
+
     @Override
     public String toString() {
         return "MsgInfo [nickName=" + nickName + ", message=" + message + ", time=" + time + "]";
