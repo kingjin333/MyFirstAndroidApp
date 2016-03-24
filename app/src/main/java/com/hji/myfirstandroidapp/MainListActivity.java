@@ -22,6 +22,7 @@ import com.hji.myfirstandroidapp.exam_thread.ThreadActivity;
 import com.hji.myfirstandroidapp.exam_viewpager.ScreenSlideActivity;
 import com.hji.myfirstandroidapp.exam_webview.WebViewActivity;
 import com.hji.myfirstandroidapp.load_picture.PictureActivity;
+import com.hji.myfirstandroidapp.load_picture.PictureNetworkActivity;
 import com.hji.myfirstandroidapp.notepad.activitys.NoteMainActivity;
 
 import java.text.Collator;
@@ -83,6 +84,7 @@ public class MainListActivity extends ListActivity {
         addItem(myData, "SignUp", SignUpActivity.class);
         addItem(myData, "NotePad", NoteMainActivity.class);
         addItem(myData, "사진 보기 - Provider", PictureActivity.class);
+        addItem(myData, "사진 다운로드 표시 - 네트워크 경유", PictureNetworkActivity.class);
 
         // ----- 메뉴 추가 여기까지
 

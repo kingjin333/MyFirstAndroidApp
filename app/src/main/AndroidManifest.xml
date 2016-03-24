@@ -58,7 +58,7 @@
             android:label="@string/title_activity_note_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <!-- http://developer.android.com/intl/ko/training/basics/intents/filters.html#AddIntentFilter -->
-        <activity android:name=".notepad.activitys.MemoEditActivity" >
+        <activity android:name=".notepad.activitys.MemoEditActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 
@@ -81,7 +81,8 @@
         <activity android:name=".load_picture.PictureActivity" />
         <activity
             android:name=".notepad.activitys.SettingsActivity"
-            android:label="@string/title_activity_settings"></activity>
+            android:label="@string/title_activity_settings" />
+        <activity android:name=".load_picture.PictureNetworkActivity" />
     </application>
 
 </manifest>
