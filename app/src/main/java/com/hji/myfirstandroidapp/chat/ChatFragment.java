@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.hji.myfirstandroidapp.R;
@@ -27,6 +28,7 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
     private EditText mMessageEdit;
     private ChatClient mChatClient;
     private LinearLayout mLinearLayout;
+    private ScrollView mScrollView;
 
 
 
@@ -43,6 +45,8 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
 
         mMessageEdit = (EditText) view.findViewById(R.id.edit_message);
         mLinearLayout = (LinearLayout) view.findViewById(R.id.linearLayout);
+        mScrollView = (ScrollView) view.findViewById(R.id.scroll);
+
 
 
         view.findViewById(R.id.btn_send).setOnClickListener(this);
