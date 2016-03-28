@@ -105,17 +105,22 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
                         ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 //  android:layout_gravity="right"
 
-                if (msgInfo.getNickName().equals("지 현")) {
-                    params.gravity = Gravity.RIGHT;
+                if (msgInfo.getNickName().equals(ChatClient.NICKNAME)) {
+                    View itemView = LayoutInflater.from(getActivity()).inflate(R.layout.item_chat_me, mLinearLayout, false);
+                    TextView timeText = (TextView) itemView.findViewById(R.id.time_me);
+                    TextView messageText = (TextView) itemView.findViewById(R.id.message_me);
+//                    timeText.setText(mSimpleDateFormat.format(new Date()));
+                    messageText.setText(msgInfo.getMessage());
+                    mLinearLayout.addView(itemView);
                 } else {
                     params.gravity = Gravity.LEFT;
+                    textView.setBackgroundResource(R.drawable.thm_chatroom_message_bubble_you_bg);
+                    textView.setText(msgInfo.getMessage());
+                    textView.setLayoutParams(params);
+                    mLinearLayout.addView(textView);
                 }
-                textView.setLayoutParams(params);
                 //  android:background="@drawable/bubble"
-                textView.setBackgroundResource(R.drawable.bubble);
-                textView.setText(msgInfo.getNickName() + ": " + msgInfo.getMessage());
 
-                mLinearLayout.addView(textView);
             }
         });
     }

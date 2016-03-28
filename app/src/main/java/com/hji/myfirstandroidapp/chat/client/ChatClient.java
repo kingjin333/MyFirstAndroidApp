@@ -20,7 +20,7 @@ import java.util.Scanner;
 public class ChatClient {
     private final static String SERVER_HOST = "suwonsmartapp.iptime.org";
     private final static int SERVER_PORT = 5000;
-    private final static String NICKNAME = "*지 현*";
+    public final static String NICKNAME = "*지 현*";
 
     private Socket mSocket;
     private String mName;
