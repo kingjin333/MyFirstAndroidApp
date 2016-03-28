@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
@@ -9,9 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/image_you"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/yui_2"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:scaleType="centerCrop"/>
@@ -23,13 +24,13 @@
 
             <TextView
                 android:id="@+id/nickname_you"
-                android:text="김경애"
+                android:text="수 지"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/message_you"
-                android:text="ㅋㅋㅋㅋㅋㅋ"
+                android:text="사랑해"
                 android:background="@drawable/thm_chatroom_message_bubble_you_bg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
