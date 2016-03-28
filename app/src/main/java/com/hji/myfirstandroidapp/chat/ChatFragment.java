@@ -5,10 +5,12 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.annotation.WorkerThread;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.hji.myfirstandroidapp.R;
@@ -22,9 +24,12 @@ import org.greenrobot.eventbus.Subscribe;
  * Created by 현 on 2016-03-24.
  */
 public class ChatFragment extends Fragment implements View.OnClickListener {
-    private TextView mMessageListTextView;
     private EditText mMessageEdit;
     private ChatClient mChatClient;
+    private LinearLayout mLinearLayout;
+
+
+
 
     @Nullable
     @Override
@@ -36,8 +41,9 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mMessageListTextView = (TextView) view.findViewById(R.id.msg_list_text);
         mMessageEdit = (EditText) view.findViewById(R.id.edit_message);
+        mLinearLayout = (LinearLayout) view.findViewById(R.id.linearLayout);
+
 
         view.findViewById(R.id.btn_send).setOnClickListener(this);
 
@@ -87,8 +93,25 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
             @Override
             public void run() {
 //                Toast.makeText(getActivity(), msgInfo.toString(), Toast.LENGTH_SHORT).show();
-                mMessageListTextView.setText
-                        (mMessageListTextView.getText().toString() + "\n" + msgInfo.getNickName() + ": " + msgInfo.getMessage());
+                // <TextView />
+                TextView textView = new TextView(getActivity());
+                //  android:layout_width="wrap_content"
+                //  android:layout_height="wrap_content"
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                //  android:layout_gravity="right"
+
+                if (msgInfo.getNickName().equals("지 현")) {
+                    params.gravity = Gravity.RIGHT;
+                } else {
+                    params.gravity = Gravity.LEFT;
+                }
+                textView.setLayoutParams(params);
+                //  android:background="@drawable/bubble"
+                textView.setBackgroundResource(R.drawable.bubble);
+                textView.setText(msgInfo.getNickName() + ": " + msgInfo.getMessage());
+
+                mLinearLayout.addView(textView);
             }
         });
     }
